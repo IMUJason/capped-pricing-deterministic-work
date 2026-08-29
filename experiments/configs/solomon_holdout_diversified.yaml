@@ -1,0 +1,15 @@
+study_name: solomon_holdout_diversified
+instances:
+  - R102
+  - RC102
+variants:
+  - name: diversified_root
+    strategy: diversified
+    candidate_pool_size: 20
+    add_count: 10
+    pricing_time_limit: 30
+    pricing_threads: 1
+    max_iterations: 40
+    max_route_age: 1000
+    diversity_cost_weight: 0.45
+    enable_pool_pruning: false

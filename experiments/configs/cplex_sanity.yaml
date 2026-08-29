@@ -1,0 +1,15 @@
+study_name: cplex_sanity
+instances:
+  - C101
+variants:
+  - name: single_tight_5s
+    strategy: single
+    candidate_pool_size: 5
+    add_count: 1
+    pricing_time_limit: 5
+    pricing_threads: 4
+    max_iterations: 12
+    max_route_age: 1000
+    diversity_cost_weight: 0.6
+    enable_pool_pruning: false
+    tighten_big_m: true

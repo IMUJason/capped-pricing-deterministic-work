@@ -1,0 +1,39 @@
+study_name: solomon_core
+instances:
+  - C101
+  - C201
+  - R101
+  - R201
+  - RC101
+  - RC201
+variants:
+  - name: single
+    strategy: single
+    candidate_pool_size: 3
+    add_count: 1
+    pricing_time_limit: 20
+    pricing_threads: 1
+    max_iterations: 12
+    max_route_age: 6
+    diversity_cost_weight: 0.6
+    enable_pool_pruning: true
+  - name: naive_multi
+    strategy: naive_multi
+    candidate_pool_size: 5
+    add_count: 3
+    pricing_time_limit: 20
+    pricing_threads: 1
+    max_iterations: 12
+    max_route_age: 6
+    diversity_cost_weight: 0.6
+    enable_pool_pruning: true
+  - name: diversified
+    strategy: diversified
+    candidate_pool_size: 5
+    add_count: 3
+    pricing_time_limit: 20
+    pricing_threads: 1
+    max_iterations: 12
+    max_route_age: 6
+    diversity_cost_weight: 0.55
+    enable_pool_pruning: true

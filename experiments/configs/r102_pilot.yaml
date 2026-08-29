@@ -1,0 +1,34 @@
+study_name: r102_pilot
+instances:
+  - R102
+variants:
+  - name: single_root
+    strategy: single
+    candidate_pool_size: 5
+    add_count: 1
+    pricing_time_limit: 30
+    pricing_threads: 1
+    max_iterations: 40
+    max_route_age: 1000
+    diversity_cost_weight: 0.6
+    enable_pool_pruning: false
+  - name: naive_root
+    strategy: naive_multi
+    candidate_pool_size: 20
+    add_count: 10
+    pricing_time_limit: 30
+    pricing_threads: 1
+    max_iterations: 40
+    max_route_age: 1000
+    diversity_cost_weight: 0.6
+    enable_pool_pruning: false
+  - name: diversified_root
+    strategy: diversified
+    candidate_pool_size: 20
+    add_count: 10
+    pricing_time_limit: 30
+    pricing_threads: 1
+    max_iterations: 40
+    max_route_age: 1000
+    diversity_cost_weight: 0.45
+    enable_pool_pruning: false

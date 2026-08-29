@@ -1,0 +1,12 @@
+name: capped-pricing
+channels: [conda-forge]
+dependencies:
+  - python=3.10
+  - pandas
+  - numpy
+  - scipy
+  - scikit-learn
+  - pyyaml
+  - pip
+  - pip:
+      - cplex  # install from local IBM ILOG CPLEX 22.1.1 distribution: <cplex_home>/python

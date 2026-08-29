@@ -1,0 +1,25 @@
+study_name: holdout_pilot_fast
+instances:
+  - R102
+  - RC102
+variants:
+  - name: naive_transfer
+    strategy: naive_multi
+    candidate_pool_size: 20
+    add_count: 10
+    pricing_time_limit: 15
+    pricing_threads: 1
+    max_iterations: 20
+    max_route_age: 1000
+    diversity_cost_weight: 0.6
+    enable_pool_pruning: false
+  - name: diversified_transfer
+    strategy: diversified
+    candidate_pool_size: 20
+    add_count: 10
+    pricing_time_limit: 15
+    pricing_threads: 1
+    max_iterations: 20
+    max_route_age: 1000
+    diversity_cost_weight: 0.45
+    enable_pool_pruning: false

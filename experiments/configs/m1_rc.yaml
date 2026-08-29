@@ -1,0 +1,41 @@
+study_name: m1_rc
+instances:
+- RC101
+- RC102
+- RC103
+- RC104
+- RC105
+- RC106
+- RC107
+- RC108
+- RC201
+- RC202
+- RC203
+- RC204
+- RC205
+- RC206
+- RC207
+- RC208
+variants:
+- pricing_time_limit: 30
+  pricing_threads: 4
+  max_iterations: 40
+  max_route_age: 1000
+  enable_pool_pruning: false
+  tighten_big_m: true
+  name: single_tight_30s
+  strategy: single
+  candidate_pool_size: 5
+  add_count: 1
+  diversity_cost_weight: 0.6
+- pricing_time_limit: 30
+  pricing_threads: 4
+  max_iterations: 40
+  max_route_age: 1000
+  enable_pool_pruning: false
+  tighten_big_m: true
+  name: diversified_tight_30s
+  strategy: diversified
+  candidate_pool_size: 20
+  add_count: 10
+  diversity_cost_weight: 0.45

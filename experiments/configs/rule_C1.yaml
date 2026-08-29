@@ -1,0 +1,35 @@
+study_name: rule_C1
+instances:
+- C101
+- C102
+- C103
+- C104
+- C105
+- C106
+- C107
+- C108
+- C109
+variants:
+- pricing_time_limit: 30
+  pricing_threads: 4
+  max_iterations: 40
+  max_route_age: 1000
+  enable_pool_pruning: false
+  tighten_big_m: true
+  strategy: diversified
+  candidate_pool_size: 20
+  diversity_cost_weight: 0.45
+  rule_mode: signal_threshold
+  rule_tl_window: 5
+  rule_tl_rate_threshold: 0.4
+  rule_hard_add_count: 3
+  rule_hard_beta: 0.75
+  rule_pool_first_min_candidates: 5
+  use_route_reservoir: true
+  reservoir_max_size: 1200
+  adaptive_hardening: false
+  use_dual_stabilization: false
+  use_subset_row_cuts: false
+  name: rule_lfo_C1
+  add_count: 10
+  rule_dual_disp_threshold: 16.303

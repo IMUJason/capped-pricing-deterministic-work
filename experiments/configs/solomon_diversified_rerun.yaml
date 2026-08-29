@@ -1,0 +1,19 @@
+study_name: solomon_diversified_rerun
+instances:
+  - C101
+  - C201
+  - R101
+  - R201
+  - RC101
+  - RC201
+variants:
+  - name: diversified_root
+    strategy: diversified
+    candidate_pool_size: 20
+    add_count: 10
+    pricing_time_limit: 30
+    pricing_threads: 1
+    max_iterations: 40
+    max_route_age: 1000
+    diversity_cost_weight: 0.45
+    enable_pool_pruning: false

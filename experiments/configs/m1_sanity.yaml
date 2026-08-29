@@ -1,0 +1,14 @@
+study_name: m1_sanity
+instances: [C101]
+variants:
+  - name: diversified_tight_30s
+    strategy: diversified
+    candidate_pool_size: 20
+    add_count: 10
+    pricing_time_limit: 30
+    pricing_threads: 4
+    max_iterations: 3
+    max_route_age: 1000
+    diversity_cost_weight: 0.45
+    enable_pool_pruning: false
+    tighten_big_m: true

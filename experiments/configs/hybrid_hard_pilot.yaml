@@ -1,0 +1,27 @@
+study_name: hybrid_hard_pilot
+instances:
+  - R201
+  - RC201
+variants:
+  - name: hybrid_plus
+    strategy: hybrid_plus
+    candidate_pool_size: 24
+    add_count: 10
+    pricing_time_limit: 30
+    pricing_threads: 1
+    max_iterations: 40
+    max_route_age: 1000
+    diversity_cost_weight: 0.45
+    enable_pool_pruning: false
+    reduced_cost_weight: 0.50
+    diversity_weight: 0.35
+    ambiguity_weight: 0.15
+    use_dual_stabilization: true
+    stabilization_beta: 0.75
+    use_subset_row_cuts: true
+    max_subset_row_cuts: 12
+    subset_row_customer_pool: 15
+    subset_row_max_new_cuts: 2
+    use_route_reservoir: true
+    reservoir_max_size: 1200
+    exact_pricing_every: 2
