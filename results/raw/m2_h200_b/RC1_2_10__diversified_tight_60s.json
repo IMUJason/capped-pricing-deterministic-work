@@ -3,7 +3,7 @@
   "family": "Homberger",
   "variant": "diversified_tight_60s",
   "instance_relative_path": "Instances/Homberger/RC1_2_10.txt",
-  "instance_path": "/Users/cjx-ms/Documents/我的坚果云/科研/论文/2026_Quantum_Solver/Plan 2/legacy/reproducibility_package/data/raw/vrptw/controller/VRPTWController-master/Instances/Homberger/RC1_2_10.txt",
+  "instance_path": "data/raw/vrptw/controller/Instances/Homberger/RC1_2_10.txt",
   "bks_source_script": "genScript1.sh",
   "bks_distance": 2990.5,
   "bks_is_optimal": false,
@@ -554,6 +554,6 @@
     "lambda_142-24-131-48-136-180-36": 0.0
   },
   "study_name": "m2_h200_b",
-  "config_path": "/Users/cjx-ms/Documents/我的坚果云/科研/论文/2026_Quantum_Solver/Plan 2/legacy/reproducibility_package/experiments/configs/m2_h200_b.yaml",
+  "config_path": "experiments/configs/m2_h200_b.yaml",
   "config_sha256": "8e84e54cbdaa91d549637729dabb96f736835b3970a16715557cc0198504aa64"
 }

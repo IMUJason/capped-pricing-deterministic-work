@@ -47,7 +47,7 @@ def solve_master(
     if binary:
         model.variables.add(obj=obj, lb=[0.0] * len(columns), ub=[1.0] * len(columns), types="B" * len(columns), names=var_names)
     else:
-        # 不传 types：CPLEX 一旦带类型向量即按 MIP 处理，对偶不可用
+        # Omit types: with a type vector CPLEX treats the model as a MIP and duals are unavailable
         model.variables.add(obj=obj, lb=[0.0] * len(columns), ub=[cplex.infinity] * len(columns), names=var_names)
 
     cover_names: list[str] = []

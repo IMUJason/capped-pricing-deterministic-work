@@ -3,7 +3,7 @@
   "family": "Solomon",
   "variant": "rule_lfo_C1",
   "instance_relative_path": "Instances/Solomon/C104.txt",
-  "instance_path": "/Users/cjx-ms/Documents/我的坚果云/科研/论文/2026_Quantum_Solver/Plan 2/legacy/reproducibility_package/data/raw/vrptw/controller/VRPTWController-master/Instances/Solomon/C104.txt",
+  "instance_path": "data/raw/vrptw/controller/Instances/Solomon/C104.txt",
   "bks_source_script": "genScript1.sh",
   "bks_distance": 822.9,
   "bks_is_optimal": true,
@@ -458,6 +458,6 @@
     "lambda_20-22-21": 0.0
   },
   "study_name": "rule_C1_C104",
-  "config_path": "/Users/cjx-ms/Documents/我的坚果云/科研/论文/2026_Quantum_Solver/Plan 2/legacy/reproducibility_package/experiments/configs/rule_C1_C104.yaml",
+  "config_path": "experiments/configs/rule_C1_C104.yaml",
   "config_sha256": "8b9f19b836db82e0be848d70c4f5e6a472963fc76b323bce1d89c4cf18a4853f"
 }

@@ -128,7 +128,7 @@ def generate_candidate_routes(
             limit = instance.depot.due_date if j == end_node else due_date(j)
             if earliest_departure + service_time(i) + edge_weight(i, j) > limit:
                 continue
-            # 容量冲突对剔除：d_i + d_j > Q 的客户不可能同车，弧永不可行
+            # Capacity-conflict arcs: d_i + d_j > Q can never share a route, arc permanently infeasible
             if tighten_big_m and i != 0 and j != end_node:
                 if instance.customers[i].demand + instance.customers[j].demand > instance.capacity:
                     continue
@@ -160,7 +160,7 @@ def generate_candidate_routes(
     for node in time_nodes:
         var_names.append(f"t_{node}")
         var_obj.append(0.0)
-        # 引擎修复：tighten 模式下 t_j 下界提到 ready_j，配合逐弧 big-M 才严格成立
+        # In tighten mode raise t_j lower bound to ready_j; required for per-arc big-M validity
         var_lb.append(float(ready_time(node)) if tighten_big_m else 0.0)
         var_ub.append(due_date(node))
         var_types.append("C")
@@ -217,7 +217,7 @@ def generate_candidate_routes(
     )
 
     def big_m(i: int, j: int) -> float:
-        # 逐弧最紧 big-M：M_ij = due_i + s_i + t_ij - ready_j（引擎修复核心）
+        # Tightest per-arc big-M: M_ij = due_i + s_i + d_ij - ready_j
         if not tighten_big_m:
             return float(big_m_time)
         if i == 0:

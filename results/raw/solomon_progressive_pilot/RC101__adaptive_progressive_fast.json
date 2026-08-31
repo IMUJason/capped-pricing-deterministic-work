@@ -3,7 +3,7 @@
   "family": "Solomon",
   "variant": "adaptive_progressive_fast",
   "instance_relative_path": "Instances/Solomon/RC101.txt",
-  "instance_path": "/Users/cjx-mbp/Documents/我的坚果云/科研/论文/2026_Quantum_Solver/Plan 2/legacy/reproducibility_package/data/raw/vrptw/controller/VRPTWController-master/Instances/Solomon/RC101.txt",
+  "instance_path": "data/raw/vrptw/controller/Instances/Solomon/RC101.txt",
   "bks_source_script": "genScript1.sh",
   "bks_distance": 1619.8,
   "bks_is_optimal": true,
@@ -907,6 +907,6 @@
     }
   ],
   "study_name": "solomon_progressive_pilot",
-  "config_path": "/Users/cjx-mbp/Documents/我的坚果云/科研/论文/2026_Quantum_Solver/Plan 2/legacy/reproducibility_package/experiments/configs/solomon_progressive_pilot.yaml",
+  "config_path": "experiments/configs/solomon_progressive_pilot.yaml",
   "config_sha256": "039d4c3e117233794f427d55e31d05d99a9348f9f6ff6e46692cbd55dbb68154"
 }
