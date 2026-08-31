@@ -75,6 +75,8 @@ def generate_candidate_routes(
     subset_row_cut_duals: dict[tuple[int, int, int], float] | None = None,
     pool_intensity: int = 2,
     tighten_big_m: bool = True,
+    deterministic_parallel: bool = False,
+    dettimelim_ticks: float | None = None,
 ) -> PricingResult:
     model = cplex.Cplex()
     model.set_log_stream(None)
@@ -83,8 +85,13 @@ def generate_candidate_routes(
     model.set_results_stream(None)
     model.objective.set_sense(model.objective.sense.minimize)
 
-    model.parameters.timelimit.set(time_limit)
+    if dettimelim_ticks is not None:
+        model.parameters.dettimelimit.set(dettimelim_ticks)
+    else:
+        model.parameters.timelimit.set(time_limit)
     model.parameters.threads.set(max(1, threads))
+    if deterministic_parallel:
+        model.parameters.parallel.set(1)
     model.parameters.mip.pool.intensity.set(pool_intensity)
     model.parameters.mip.pool.capacity.set(max(pool_solutions, 1))
     model.parameters.mip.limits.populate.set(max(pool_solutions, 1))

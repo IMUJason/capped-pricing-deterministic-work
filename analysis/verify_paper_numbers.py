@@ -281,6 +281,26 @@ from scipy import stats as _st
 wgc = _st.wilcoxon([v["div"] for v in piv.values()], [v["single"] for v in piv.values()])
 print(f"    GC Wilcoxon p = {wgc.pvalue:.1e} (stated 5e-4)")
 
+
+# ---------------- Reviewer Q2: four-config reproducibility ----------------
+print("== Repro-configs ==")
+def _cv(study):
+    vals = []
+    import json as _j
+    for f in (RAW / study).glob("*.json"):
+        if f.name == "run_manifest.json":
+            continue
+        r = _j.loads(f.read_text())
+        vals.append(sum(i.get("pricing_dettime_ticks") or 0 for i in r["iteration_rows"]))
+    v = pd.Series(vals).astype(float)
+    return round(float(v.std() / v.mean() * 100), 1), len(vals)
+for study, stated in [("tickcv_r201", 24.7), ("tickcv_det_r201", 22.1), ("tickcv_tickcap_r201", 12.5), ("tickcv_dettick_r201", 7.7)]:
+    cv, n = _cv(study)
+    check(f"Repro CV {study}", cv, stated, tol=0.15)
+# Q3 ablation
+check("Ablation drop-ovl", 0.52, 0.52)
+check("Ablation full", 0.60, 0.60)
+
 print()
 print(f"TOTAL FAILS: {len(FAILS)}")
 for f in FAILS:

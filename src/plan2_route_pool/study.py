@@ -60,6 +60,8 @@ class VariantConfig:
     rule_hard_add_count: int = 3
     rule_hard_beta: float = 0.75
     rule_pool_first_min_candidates: int = 5
+    deterministic_parallel: bool = False
+    dettimelim_ticks: float | None = None
 
 
 def _project_root_from_config(config_path: Path) -> Path:
@@ -532,6 +534,8 @@ def run_study_from_config(config_path: str | Path) -> tuple[Path, Path]:
             rule_hard_add_count=int(variant.get("rule_hard_add_count", 3)),
             rule_hard_beta=float(variant.get("rule_hard_beta", 0.75)),
             rule_pool_first_min_candidates=int(variant.get("rule_pool_first_min_candidates", 5)),
+            deterministic_parallel=bool(variant.get("deterministic_parallel", False)),
+            dettimelim_ticks=(None if variant.get("dettimelim_ticks") is None else float(variant.get("dettimelim_ticks"))),
         )
         for variant in config["variants"]
     ]

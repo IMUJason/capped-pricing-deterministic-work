@@ -1,0 +1,43 @@
+study_name: tickcv_dettick_r201
+instances:
+- R201
+variants:
+- pricing_time_limit: 30
+  pricing_threads: 4
+  max_iterations: 40
+  max_route_age: 1000
+  enable_pool_pruning: false
+  tighten_big_m: true
+  deterministic_parallel: true
+  dettimelim_ticks: 3000
+  name: single_det_tick_rep1
+  strategy: single
+  candidate_pool_size: 5
+  add_count: 1
+  diversity_cost_weight: 0.6
+- pricing_time_limit: 30
+  pricing_threads: 4
+  max_iterations: 40
+  max_route_age: 1000
+  enable_pool_pruning: false
+  tighten_big_m: true
+  deterministic_parallel: true
+  dettimelim_ticks: 3000
+  name: single_det_tick_rep2
+  strategy: single
+  candidate_pool_size: 5
+  add_count: 1
+  diversity_cost_weight: 0.6
+- pricing_time_limit: 30
+  pricing_threads: 4
+  max_iterations: 40
+  max_route_age: 1000
+  enable_pool_pruning: false
+  tighten_big_m: true
+  deterministic_parallel: true
+  dettimelim_ticks: 3000
+  name: single_det_tick_rep3
+  strategy: single
+  candidate_pool_size: 5
+  add_count: 1
+  diversity_cost_weight: 0.6

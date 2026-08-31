@@ -1,0 +1,18 @@
+study_name: rule_sanity
+instances: [C101]
+variants:
+  - name: rule_test
+    strategy: diversified
+    candidate_pool_size: 20
+    add_count: 10
+    pricing_time_limit: 30
+    pricing_threads: 4
+    max_iterations: 6
+    max_route_age: 1000
+    diversity_cost_weight: 0.45
+    enable_pool_pruning: false
+    tighten_big_m: true
+    rule_mode: signal_threshold
+    rule_dual_disp_threshold: 2.0
+    use_route_reservoir: true
+    reservoir_max_size: 1200
