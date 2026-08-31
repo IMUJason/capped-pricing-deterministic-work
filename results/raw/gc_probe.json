@@ -1,0 +1,62 @@
+[
+  {
+    "n": 60,
+    "p": 0.9,
+    "edges": 1594,
+    "seeds": 28,
+    "lp": 28.0,
+    "wall": 0.00458,
+    "nodes": 1,
+    "status": "OPTIMAL"
+  },
+  {
+    "n": 100,
+    "p": 0.9,
+    "edges": 4454,
+    "seeds": 42,
+    "lp": 42.0,
+    "wall": 0.00813,
+    "nodes": 1,
+    "status": "OPTIMAL"
+  },
+  {
+    "n": 200,
+    "p": 0.9,
+    "edges": 17895,
+    "seeds": 80,
+    "lp": 80.0,
+    "wall": 0.03023,
+    "nodes": 1,
+    "status": "OPTIMAL"
+  },
+  {
+    "n": 300,
+    "p": 0.5,
+    "edges": 22436,
+    "seeds": 45,
+    "lp": 45.0,
+    "wall": 0.06208,
+    "nodes": 0,
+    "status": "OPTIMAL"
+  },
+  {
+    "n": 500,
+    "p": 0.5,
+    "edges": 62560,
+    "seeds": 69,
+    "lp": 69.0,
+    "wall": 0.19703,
+    "nodes": 51,
+    "status": "OPTIMAL"
+  },
+  {
+    "n": 700,
+    "p": 0.5,
+    "edges": 122434,
+    "seeds": 93,
+    "lp": 93.0,
+    "wall": 0.49091,
+    "nodes": 21,
+    "status": "OPTIMAL"
+  }
+]

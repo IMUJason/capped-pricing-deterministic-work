@@ -301,6 +301,16 @@ for study, stated in [("tickcv_r201", 24.7), ("tickcv_det_r201", 22.1), ("tickcv
 check("Ablation drop-ovl", 0.52, 0.52)
 check("Ablation full", 0.60, 0.60)
 
+
+# ---------------- GC scale probe ----------------
+print('== GC probe ==')
+import json as _j
+probe = _j.loads((RAW / 'gc_probe.json').read_text()) if (RAW / 'gc_probe.json').exists() else None
+if probe:
+    check('GC probe min wall < 0.01s', min(x['wall'] for x in probe) < 0.01, True)
+    check('GC probe max wall < 1s', max(x['wall'] for x in probe) < 1.0, True)
+    check('GC probe max nodes <= 51', max(x['nodes'] for x in probe), 51)
+
 print()
 print(f"TOTAL FAILS: {len(FAILS)}")
 for f in FAILS:
