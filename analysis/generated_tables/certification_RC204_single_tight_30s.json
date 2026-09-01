@@ -1,0 +1,14 @@
+{
+  "instance_name": "RC204",
+  "variant": "single_tight_30s",
+  "cert_time_limit": 900.0,
+  "final_lp_objective": 1283.9999999999998,
+  "bks_distance": 783.5,
+  "certificate_status": "OPTIMAL",
+  "certificate_best_rc": -621.0,
+  "certified": false,
+  "cert_runtime_seconds": 44.84624491602881,
+  "cert_detticks": 123409.66168880463,
+  "cert_nodes": 32780,
+  "cert_mip_gap": 0.6753843782384259
+}

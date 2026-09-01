@@ -1,0 +1,14 @@
+{
+  "instance_name": "R201",
+  "variant": "single_tight_30s",
+  "cert_time_limit": 1800.0,
+  "final_lp_objective": 1677.0000000000002,
+  "bks_distance": 1143.2,
+  "certificate_status": "TIME_LIMIT",
+  "certificate_best_rc": -529.3530206088303,
+  "certified": false,
+  "cert_runtime_seconds": 1800.5429009160143,
+  "cert_detticks": 4023142.053630829,
+  "cert_nodes": 578384,
+  "cert_mip_gap": 0.7344595345840316
+}

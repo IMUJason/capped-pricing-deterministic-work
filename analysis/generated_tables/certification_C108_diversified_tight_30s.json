@@ -1,0 +1,14 @@
+{
+  "instance_name": "C108",
+  "variant": "diversified_tight_30s",
+  "cert_time_limit": 900.0,
+  "final_lp_objective": 2033.7827158005534,
+  "bks_distance": 827.3,
+  "certificate_status": "OPTIMAL",
+  "certificate_best_rc": -396.19147435251443,
+  "certified": false,
+  "cert_runtime_seconds": 342.03156991599826,
+  "cert_detticks": 702387.2912225723,
+  "cert_nodes": 64007,
+  "cert_mip_gap": 4.472822101017298
+}

@@ -16,8 +16,9 @@ on the VRPTW and on set covering by independent sets (graph coloring).
 | `experiments/configs/` | All study configurations (YAML) reproducing every experiment of the paper |
 | `data/raw/vrptw/` | Solomon 100-customer and Homberger 200-customer benchmark instances (input data only) |
 | `data/vrptw_dimacs_bks.csv` | Best-known-solution provenance for bound comparisons |
-| `analysis/` | Verification and analysis scripts (no plotting): independent number verification (~60 claims), uncertified-termination scan, certificate calls, rule evaluation, threshold fitting, four-configuration reproducibility reruns |
-| `results/raw/` | 595 raw run logs (JSON): per-iteration pricing status, wall-clock, deterministic ticks, nodes, candidate counts, admitted-column signatures, final LP bases |
+| `analysis/` | Verification and analysis scripts (no plotting): independent number verification (72 claims), uncertified-termination scan, certificate calls, rule evaluation, threshold fitting, four-configuration reproducibility reruns |
+| `results/raw/` | 603 raw run logs (JSON): per-iteration pricing status, wall-clock, deterministic ticks, nodes, candidate counts, admitted-column signatures, final LP bases |
+| `analysis/generated_tables/` | Derived tables read by the verification script: rule evaluation, anytime certificates, certificate-call records |
 
 Not included: manuscript sources, figures, and plotting scripts.
 

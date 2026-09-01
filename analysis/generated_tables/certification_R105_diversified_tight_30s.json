@@ -1,0 +1,14 @@
+{
+  "instance_name": "R105",
+  "variant": "diversified_tight_30s",
+  "cert_time_limit": 900.0,
+  "final_lp_objective": 1602.9547036282124,
+  "bks_distance": 1355.3,
+  "certificate_status": "OPTIMAL",
+  "certificate_best_rc": -100.78726987124259,
+  "certified": false,
+  "cert_runtime_seconds": 35.13205829198705,
+  "cert_detticks": 67483.40728855133,
+  "cert_nodes": 5672,
+  "cert_mip_gap": 0.0
+}

@@ -19,6 +19,12 @@ PKG = Path(__file__).resolve().parents[1]
 PLAN2 = PKG.parents[1]
 RAW = PLAN2 / "results" / "raw"
 GENDIR = PLAN2 / "paper" / "ejor_submission" / "generated"
+# Repo-layout fallback: when run inside the released repository (which contains
+# results/ but no paper/), resolve against the repository root instead.
+if not RAW.is_dir() and (PKG / "results" / "raw").is_dir():
+    RAW = PKG / "results" / "raw"
+if not GENDIR.is_dir() and (PKG / "analysis" / "generated_tables").is_dir():
+    GENDIR = PKG / "analysis" / "generated_tables"
 
 FAM = lambda n: ("C1" if n.startswith("C1") else "C2" if n.startswith("C2") else
                  "R1" if n.startswith("R1") else "R2" if n.startswith("R2") else
@@ -262,7 +268,7 @@ check("Anytime median ratio", round(float(rel.median()), 2), 0.78)
 # ---------------- GC cross-problem ----------------
 print("== GC ==")
 import json as _json
-gcdir = PLAN2 / "results" / "raw"
+gcdir = RAW
 lad = [_json.loads(f.read_text()) for f in (gcdir / "gc_ladder").glob("*.json")]
 check("GC ladder runs", len(lad), 24)
 tl_total = sum(1 for r in lad for i in r["iteration_rows"] if i["pricing_status"] == "TIME_LIMIT")
@@ -297,6 +303,35 @@ def _cv(study):
 for study, stated in [("tickcv_r201", 24.7), ("tickcv_det_r201", 22.1), ("tickcv_tickcap_r201", 12.5), ("tickcv_dettick_r201", 7.7)]:
     cv, n = _cv(study)
     check(f"Repro CV {study}", cv, stated, tol=0.15)
+
+# Stanford review Q5: outcome stability across reruns under the recommended
+# configuration (tick cap + deterministic parallelism = tickcv_dettick_r201).
+def _outcomes(study):
+    import json as _j
+    lp, pool, hrs, = [], [], []
+    for f in (RAW / study).glob("*.json"):
+        if f.name == "run_manifest.json":
+            continue
+        r = _j.loads(f.read_text())
+        lp.append(r["final_lp_objective"])
+        pool.append(r["final_route_pool_size"])
+        stt = r.get("pricing_statuses") or [i.get("pricing_status") for i in r["iteration_rows"]]
+        hrs.append(sum(1 for s in stt if s and "limit" in str(s).lower()) / len(stt))
+    return lp, pool, hrs
+_lp, _pool, _hrs = _outcomes("tickcv_dettick_r201")
+check("Rerun LP bound identical (dettick)", float(max(_lp) - min(_lp)), 0.0, tol=1e-9)
+check("Rerun pool size identical (dettick)", float(max(_pool) - min(_pool)), 0.0, tol=1e-9)
+check("Rerun hit-rate jitter max (dettick)", round(max(_hrs), 3), 0.075, tol=0.05)
+check("Rerun hit-rate jitter min (dettick)", round(min(_hrs), 3), 0.025, tol=0.05)
+
+# Data-availability claim: total released iteration-level runs (every run JSON
+# under results/raw, excluding per-directory manifests and the gc_probe.json
+# scale-probe artifact).
+_nruns = sum(
+    1 for f in RAW.rglob("*.json")
+    if f.name != "run_manifest.json" and f.name != "gc_probe.json"
+)
+check("Released run count (paper Data availability)", _nruns, 603, tol=0)
 # Q3 ablation
 check("Ablation drop-ovl", 0.52, 0.52)
 check("Ablation full", 0.60, 0.60)

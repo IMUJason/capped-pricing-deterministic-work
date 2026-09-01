@@ -1,0 +1,14 @@
+{
+  "instance_name": "R101",
+  "variant": "single_tight_30s",
+  "cert_time_limit": 1800.0,
+  "final_lp_objective": 1936.0000000000005,
+  "bks_distance": 1637.7,
+  "certificate_status": "OPTIMAL",
+  "certificate_best_rc": -111.66666666666666,
+  "certified": false,
+  "cert_runtime_seconds": 0.222588624979835,
+  "cert_detticks": 414.606653213501,
+  "cert_nodes": 5,
+  "cert_mip_gap": 0.0
+}

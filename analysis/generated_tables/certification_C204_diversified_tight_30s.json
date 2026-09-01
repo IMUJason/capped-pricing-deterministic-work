@@ -1,0 +1,14 @@
+{
+  "instance_name": "C204",
+  "variant": "diversified_tight_30s",
+  "cert_time_limit": 900.0,
+  "final_lp_objective": 1338.8195455137316,
+  "bks_distance": 588.1,
+  "certificate_status": "OPTIMAL",
+  "certificate_best_rc": -987.7724774845692,
+  "certified": false,
+  "cert_runtime_seconds": 71.17115654196823,
+  "cert_detticks": 166904.58614253998,
+  "cert_nodes": 29561,
+  "cert_mip_gap": 1.5226916506318011
+}
